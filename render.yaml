@@ -1,0 +1,19 @@
+services:
+  - type: web  # Define que este é um serviço web
+    name: toca-pedrilhante-backend  # Nome do serviço no Render
+    env: node  # Ambiente Node.js
+    plan: free  # Utiliza o plano gratuito do Render
+    buildCommand: "npm install"  # Comando para instalar dependências
+    startCommand: "npm start"  # Comando para iniciar o servidor
+    autoDeploy: true  # Ativa o deploy contínuo
+    envVars:
+      - key: DATABASE_HOST
+        value: "bxqqfmfsq9wwiddwznzj-mysql.services.clever-cloud.com"  # Substitua pelo endereço do host MySQL no ambiente de produção
+      - key: DATABASE_USER
+        value: "uwfgvvtrntb5tysj"  # Substitua pelo usuário do banco de dados
+      - key: DATABASE_PASSWORD
+        value: "DS9Bw9Hf6xrC6pB0eZKl"  # Substitua pela senha do banco de dados
+      - key: DATABASE_NAME
+        value: "bxqqfmfsq9wwiddwznzj"  # Substitua pelo nome do banco de dados
+      - key: NODE_ENV
+        value: "production"
